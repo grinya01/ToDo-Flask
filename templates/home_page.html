@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo</title>
+</head>
+<body>
+<a href="/login">Login</a>
+<a href="/create">Create Task</a>
+    <table>
+        <tr>
+            <th>Task</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.task_name }} |</td>
+            <td>{{ task.description }} |</td>
+            <td>{{ task.task_owner }} |</td>
+            <td>
+                <a href="delete/{{task.id}}">Delete</a> <br>
+                <a href="update/{{task.id}}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
