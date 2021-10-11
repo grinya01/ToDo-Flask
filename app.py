@@ -19,7 +19,6 @@ def create_task():
         task_description = request.form['description']
         task_owner = request.form['task_owner']
         new_task = TaskModel(task_name=task_name, description=task_description, task_owner=task_owner)
-        print(new_task)
 
         try:
             db.session.add(new_task)
